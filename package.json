@@ -1,0 +1,33 @@
+{
+  "name": "strong-tunnel",
+  "version": "1.0.0",
+  "description": "Semi-transparent wrapper for arbitrary network connections over ssh2",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap test/test-*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:strongloop/strong-tunnel.git"
+  },
+  "keywords": [
+    "ssh2",
+    "tunnel",
+    "proxy",
+    "tcp",
+    "socket",
+    "url"
+  ],
+  "author": "StrongLoop <callback@strongloop.com>",
+  "license": "Artistic 2.0",
+  "bugs": {
+    "url": "https://github.com/strongloop/strong-tunnel/issues"
+  },
+  "homepage": "https://github.com/strongloop/strong-tunnel",
+  "devDependencies": {
+    "tap": "^0.6.1"
+  },
+  "dependencies": {
+    "ssh2": "^0.4.4"
+  }
+}

@@ -4,7 +4,13 @@ var urlParse = require('url').parse;
 
 module.exports = fromUrl;
 
-function fromUrl(url, callback) {
+function fromUrl(url, opts, callback) {
+  if (callback === undefined && typeof opts === 'function') {
+    callback = opts;
+    opts = {};
+  }
+  opts = opts || {};
+
   var str = JSON.parse(JSON.stringify(url));
   var obj = str;
 
@@ -19,7 +25,7 @@ function fromUrl(url, callback) {
     // we've replaced the port, so delete host so URL is recomposed using
     // $hostname:$port for $host
     delete obj.host;
-    tunnel(obj, function(err, urlObj) {
+    tunnel(obj, opts, function(err, urlObj) {
       callback(err, urlFmt(urlObj));
     });
   } else {

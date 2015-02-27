@@ -6,6 +6,10 @@ var server = http.createServer(function(req, res) {
   res.end(JSON.stringify(req.headers));
 });
 
+var sshOpts = {
+  host: '127.0.0.1',
+};
+
 server.listen(3030, function() {
   var direct = 'http://127.0.0.1:3030/';
   var tunneled = 'http+ssh://127.0.0.1:3030/';
@@ -19,7 +23,8 @@ server.listen(3030, function() {
     http.get(url, resLog('%s using %s:', direct, url));
   });
 
-  st(tunneled, function(err, url) {
+  // optional second argument containing ssh config
+  st(tunneled, sshOpts, function(err, url) {
     // url != tunneled, is modified
     http.get(url, resLog('%s using %s:', tunneled, url));
   });

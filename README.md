@@ -4,14 +4,16 @@ Easy tunnelling over ssh2.
 
 ## Usage
 
-There is nothing to configure, but some environment variables are required.
+There is nothing to configure, but some environment variables are used to
+set defaults if no options are given.
 
 ```
 var st = require('strong-tunnel');
 
-st(someUrl, function(err, url) {
+st(someUrl, sshOpts, function(err, url) {
   // if someUrl was plain http, url will be someUrl
   // if someUrl was http+ssh://, url points to a local ephemeral tunnel
+  // sshOpts is optional with defaults described below.
   http.get(url, onResponse);
 });
 ```
@@ -44,6 +46,10 @@ var server = http.createServer(function(req, res) {
   res.end(JSON.stringify(req.headers));
 });
 
+var sshOpts = {
+  host: '127.0.0.1',
+};
+
 server.listen(3030, function() {
   var direct = 'http://127.0.0.1:3030/';
   var tunneled = 'http+ssh://127.0.0.1:3030/';
@@ -57,7 +63,8 @@ server.listen(3030, function() {
     http.get(url, resLog('%s using %s:', direct, url));
   });
 
-  st(tunneled, function(err, url) {
+  // optional second argument containing ssh config
+  st(tunneled, sshOpts, function(err, url) {
     // url != tunneled, is modified
     http.get(url, resLog('%s using %s:', tunneled, url));
   });

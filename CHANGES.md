@@ -1,3 +1,9 @@
+2015-02-27, Version 1.1.1
+=========================
+
+ * fix broken auth override (Ryan Graham)
+
+
 2015-02-27, Version 1.1.0
 =========================
 

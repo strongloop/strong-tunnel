@@ -19,12 +19,14 @@ server.listen(3030, function() {
 
   // URL is only modified if a tunnelling URL was given
   st(direct, function(err, url) {
+    if (err) throw err;
     // url == direct, unmodified
     http.get(url, resLog('%s using %s:', direct, url));
   });
 
   // optional second argument containing ssh config
   st(tunneled, sshOpts, function(err, url) {
+    if (err) throw err;
     // url != tunneled, is modified
     http.get(url, resLog('%s using %s:', tunneled, url));
   });

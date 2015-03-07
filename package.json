@@ -4,6 +4,7 @@
   "description": "Semi-transparent wrapper for arbitrary network connections over ssh2",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint index.js lib test; jscs index.js lib test",
     "test": "tap test/test-*.js"
   },
   "repository": {
@@ -26,6 +27,8 @@
   "homepage": "https://github.com/strongloop/strong-tunnel",
   "devDependencies": {
     "buffer-equal-constant-time": "^1.0.1",
+    "eslint": "^0.15.1",
+    "jscs": "^1.11.3",
     "tap": "^0.6.0"
   },
   "dependencies": {

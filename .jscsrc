@@ -1,4 +1,5 @@
 {
+  "excludeFiles": ["node_modules/**"],
   "disallowMixedSpacesAndTabs": true,
   "disallowKeywordsOnNewLine": [],
   "requireCurlyBraces": [

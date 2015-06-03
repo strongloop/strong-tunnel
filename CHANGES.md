@@ -1,3 +1,13 @@
+2015-06-03, Version 1.1.2
+=========================
+
+ * package: update eslint (Sam Roberts)
+
+ * package: fix linter warnings/errors (Ryan Graham)
+
+ * package: lint with eslint and jscs (Sam Roberts)
+
+
 2015-02-27, Version 1.1.1
 =========================
 

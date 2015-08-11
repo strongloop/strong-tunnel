@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint . && jscs .",
     "pretest": "eslint . && jscs .",
-    "test": "tap test/test-*.js"
+    "test": "tap --coverage --coverage-report=cobertura test/test-*.js"
   },
   "repository": {
     "type": "git",
@@ -30,7 +30,7 @@
     "buffer-equal-constant-time": "^1.0.1",
     "eslint": "^0.18.0",
     "jscs": "^1.11.3",
-    "tap": "^0.6.0"
+    "tap": "^1.3.2"
   },
   "dependencies": {
     "ssh2": "^0.4.4"

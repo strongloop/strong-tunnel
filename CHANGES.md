@@ -1,3 +1,11 @@
+2015-09-16, Version 1.1.3
+=========================
+
+ * test: generate cobertura coverage reports (Ryan Graham)
+
+ * test: make example and test-example separate (Ryan Graham)
+
+
 2015-06-03, Version 1.1.2
 =========================
 

@@ -21,7 +21,7 @@
     "url"
   ],
   "author": "StrongLoop <callback@strongloop.com>",
-  "license": "Artistic 2.0",
+  "license": "Artistic-2.0",
   "bugs": {
     "url": "https://github.com/strongloop/strong-tunnel/issues"
   },

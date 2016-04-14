@@ -1,3 +1,5 @@
+'use strict';
+
 var st = require('../');
 var tap = require('tap');
 

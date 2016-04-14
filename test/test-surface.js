@@ -1,3 +1,5 @@
+'use strict';
+
 var tap = require('tap');
 
 tap.test('exported methods', function(t) {

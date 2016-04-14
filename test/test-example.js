@@ -1,3 +1,5 @@
+'use strict';
+
 var fork = require('child_process').fork;
 var tap = require('tap');
 

@@ -1,3 +1,5 @@
+'use strict';
+
 var fmt = require('util').format;
 var http = require('http');
 var st = require('../');

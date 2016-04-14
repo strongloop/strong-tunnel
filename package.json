@@ -29,7 +29,7 @@
     "buffer-equal-constant-time": "^1.0.1",
     "eslint": "^2",
     "eslint-config-strongloop": "^2",
-    "tap": "^2.1.1"
+    "tap": "^5"
   },
   "dependencies": {
     "ssh2": "^0.4.4"

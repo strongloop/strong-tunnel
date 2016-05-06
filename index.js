@@ -1,3 +1,8 @@
+// Copyright IBM Corp. 2015,2016. All Rights Reserved.
+// Node module: strong-tunnel
+// This file is licensed under the Artistic License 2.0.
+// License text available at https://opensource.org/licenses/Artistic-2.0
+
 var tunnel = require('./lib/tunnel');
 var urlFmt = require('url').format;
 var urlParse = require('url').parse;

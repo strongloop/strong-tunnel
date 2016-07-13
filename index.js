@@ -3,6 +3,8 @@
 // This file is licensed under the Artistic License 2.0.
 // License text available at https://opensource.org/licenses/Artistic-2.0
 
+'use strict';
+
 var tunnel = require('./lib/tunnel');
 var urlFmt = require('url').format;
 var urlParse = require('url').parse;

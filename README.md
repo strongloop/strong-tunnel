@@ -50,14 +50,15 @@ var sshOpts = {
   host: '127.0.0.1',
 };
 
-server.listen(3030, function() {
-  var direct = 'http://127.0.0.1:3030/';
-  var tunneled = 'http+ssh://127.0.0.1:3030/';
+server.listen(0, '127.0.0.1', function() {
+  var httpPort = this.address().port;
+  var direct = fmt('http://127.0.0.1:%d/', httpPort);
+  var tunneled = fmt('http+ssh://127.0.0.1:%d/', httpPort);
 
   // Standard request using URL string
   http.get(direct, resLog('%s using %s:', direct, direct));
 
-  // URL is only modified if a tunnelling URL was given
+  // URL is only modified if a tunneling URL was given
   st(direct, function(err, url) {
     if (err) throw err;
     // url == direct, unmodified

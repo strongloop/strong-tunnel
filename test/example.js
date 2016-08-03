@@ -6,6 +6,7 @@
 'use strict';
 
 var fmt = require('util').format;
+var fs = require('fs');
 var http = require('http');
 var st = require('../');
 
@@ -16,6 +17,14 @@ var server = http.createServer(function(req, res) {
 var sshOpts = {
   host: '127.0.0.1',
 };
+
+// The following are not required and if they aren't set here or in the ENV,
+// strong-tunnel will use logical default values.
+sshOpts.port = process.env.SSH_PORT;
+sshOpts.username = process.env.SSH_USERNAME;
+if (process.env.SSH_PRIVATE_KEY) {
+  sshOpts.privateKey = fs.readFileSync(process.env.SSH_PRIVATE_KEY, 'utf8');
+}
 
 server.listen(0, '127.0.0.1', function() {
   var httpPort = this.address().port;

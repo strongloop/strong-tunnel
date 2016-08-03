@@ -10,15 +10,15 @@ var http = require('http');
 var st = require('../');
 var tap = require('tap');
 
-tap.test('connects to local http server over ssh', function(t) {
+var env = process.env;
+var username = env.LOGNAME || env.USER || env.LNAME || env.USERNAME;
+var requireAgent = {
+  skip: !env.SSH_AUTH_SOCK && 'test requires SSH_AUTH_SOCK',
+};
 
-  t.plan(9);
-
-  var env = process.env;
-  var username = env.LOGNAME || env.USER || env.LNAME || env.USERNAME;
-  t.assert(username, 'there is a username');
-
-  t.assert(env.SSH_AUTH_SOCK, 'there is an ssh agent socket open');
+tap.test('connects to local http server over ssh', requireAgent, function(t) {
+  t.plan(8);
+  t.ok(username, 'there is a username');
 
   var server = http.createServer(function(req, res) {
     t.ok(req, 'got a request');

@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pretest": "eslint .",
-    "test": "ssh-agent npm run tap",
-    "tap": "ssh-add; tap --coverage --coverage-report=cobertura test/test-*.js"
+    "test": "tap --coverage --coverage-report=cobertura test/test-*.js"
   },
   "repository": {
     "type": "git",

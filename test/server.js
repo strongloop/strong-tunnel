@@ -25,7 +25,7 @@ function makeServer(opts, callback) {
   var log = opts.log || console.log;
 
   var server = new Server({
-    privateKey: fs.readFileSync(hostPrivateKey),
+    hostKeys: [fs.readFileSync(hostPrivateKey)],
   }, function(client) {
     clients.push(client);
     log('Client connected!');

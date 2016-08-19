@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pretest": "eslint .",
-    "test": "ssh-agent npm run tap",
-    "tap": "ssh-add; tap --coverage --coverage-report=cobertura test/test-*.js"
+    "test": "tap --coverage --coverage-report=cobertura test/test-*.js"
   },
   "repository": {
     "type": "git",
@@ -27,12 +26,11 @@
   },
   "homepage": "https://github.com/strongloop/strong-tunnel",
   "devDependencies": {
-    "buffer-equal-constant-time": "^1.0.1",
     "eslint": "^2",
     "eslint-config-strongloop": "^2.0.1",
-    "tap": "^5.7.3"
+    "tap": "^6.3.0"
   },
   "dependencies": {
-    "ssh2": "^0.4.4"
+    "ssh2": "^0.5.0"
   }
 }
